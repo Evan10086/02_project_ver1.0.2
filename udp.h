@@ -22,14 +22,17 @@
     exit(-1);\
 }while(0)
  
+ //链表
 typedef struct _Node{
     struct sockaddr_in addr; 
     struct _Node *next;
 }node_t;
  
+
 typedef struct _Msg{
     char code;
     char user[M];
+    char to_user[M];  // 添加目标用户字段
     char text[N];
 }msg_t;
 #endif

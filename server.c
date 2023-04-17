@@ -16,7 +16,7 @@ int insert_data_by_tail(node_t *phead,struct sockaddr_in addr){
         printf("入参为NULL,请检查\n");
         return -1;
     }
-    //将新客户端使用尾插法插入链表中
+    //将新客户端使用插入链表中
     node_t *pnew = NULL;
     create_node(&pnew);
     pnew->addr = addr;  
@@ -71,6 +71,7 @@ int main(int argc,const char *argv[]){
                 perror("recv error");
             }    
         switch(msg.code){
+
             // 1、d 登录操作 2、q 群聊操作 3、t 退出操作 
             case 'd':
                 printf("[%s]该玩家已上线\n", msg.user);              
